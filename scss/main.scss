@@ -115,28 +115,6 @@ main {
 }
 
 //Work/projects
-// .projects {
-//   display: grid;
-//   grid-gap: 0.7rem;
-//   grid-template-columns: repeat(3, 1fr);
-//
-//   img {
-//     width: 100%;
-//     border: 3px #fff solid;
-//
-//     .overlay {
-//       display: none;
-//     }
-//
-//     &:hover {
-//       opactiy: 0.5;
-//       border-color: $secondary-color;
-//       @include easeOut;
-//     }
-//   }
-// }
-
-//TIM
 .projects {
   display: grid;
   grid-gap: 0.7rem;
@@ -146,23 +124,21 @@ main {
   img {
     width: 100%;
     border: 3px #fff solid;
+    //position: absolute;
   }
 
-  .overlay {
-    display: none;
-  }
-
-  .item:hover {
-    .overlay {
-      display: block;
-      opactiy: 0.5;
-      border-color: black;
+  .item {
+    .title {
+      display: none;
+      position: relative; /*text will appear on top of image*/
     }
-
-    &:hover {
+    img:hover {
       opactiy: 0.5;
-      border-color: $secondary-color;
-      @include easeOut;
+      border-color: #000;
+    }
+    img:hover + .title {
+      /*display the tile when hover over the image*/
+      display: block;
     }
   }
 }
