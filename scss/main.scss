@@ -115,33 +115,92 @@ main {
 }
 
 //Work/projects
-.projects {
-  display: grid;
-  grid-gap: 0.7rem;
-  grid-template-columns: repeat(3, 1fr);
-  font-size: 20px;
 
-  img {
-    width: 100%;
-    border: 3px #fff solid;
-    //position: absolute;
-  }
-
-  .item {
-    .title {
-      display: none;
-      position: relative; /*text will appear on top of image*/
-    }
-    img:hover {
-      opactiy: 0.5;
-      border-color: #000;
-    }
-    img:hover + .title {
-      /*display the tile when hover over the image*/
-      display: block;
-    }
-  }
+body {
+  position: relative;
 }
+.projects {
+  position: relative;
+  width: 30%;
+}
+
+.item {
+  position: relative;
+  display: grid;
+}
+.item img {
+  border-style: solid;
+  border-width: 3px;
+  width: 100%;
+  margin: auto;
+
+  /* z-index: 10; */
+}
+
+.item .title_container {
+  /* hide the div */
+  visibility: hidden;
+
+  /* calc is because of the 3px border of the parent img */
+  width: calc(100% + 3px);
+  height: 100%;
+
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+
+  /* center the content  */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item .title_text {
+  color: white;
+  font-family: Sans-Serif;
+  font-size: 200%;
+}
+
+.item:hover .title_container {
+  /* show the div */
+  visibility: visible;
+}
+
+.link {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  display: block;
+}
+
+// .projects {
+//   display: grid;
+//   grid-gap: 0.7rem;
+//   grid-template-columns: repeat(3, 1fr);
+//   grid-auto-rows: minmax(100px, auto);
+//   //font-size: 20px;
+//
+//   img {
+//     width: 100%;
+//     border: 3px #fff solid;
+//     //position: absolute;
+//   }
+//
+//   .item .content {
+//     .title {
+//       display: none;
+//       position: relative; /*text will appear on top of image*/
+//     }
+//     img:hover {
+//       opactiy: 0.5;
+//       border-color: $secondary-color;
+//     }
+//     img:hover + .title {
+//       /*display the tile when hover over the image*/
+//       display: block;
+//       //position: relative;
+//     }
+//   }
+// }
 
 //Contact Page
 .boxes {

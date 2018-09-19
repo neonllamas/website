@@ -173,24 +173,51 @@ main {
     padding: 0.5rem;
     border-bottom: #3d1dff 5px solid; }
 
+body {
+  position: relative; }
+
 .projects {
-  display: grid;
-  grid-gap: 0.7rem;
-  grid-template-columns: repeat(3, 1fr);
-  font-size: 20px; }
-  .projects img {
-    width: 100%;
-    border: 3px #fff solid; }
-  .projects .item .title {
-    display: none;
-    position: relative;
-    /*text will appear on top of image*/ }
-  .projects .item img:hover {
-    opactiy: 0.5;
-    border-color: #000; }
-  .projects .item img:hover + .title {
-    /*display the tile when hover over the image*/
-    display: block; }
+  position: relative;
+  width: 30%; }
+
+.item {
+  position: relative;
+  display: grid; }
+
+.item img {
+  border-style: solid;
+  border-width: 3px;
+  width: 100%;
+  margin: auto;
+  /* z-index: 10; */ }
+
+.item .title_container {
+  /* hide the div */
+  visibility: hidden;
+  /* calc is because of the 3px border of the parent img */
+  width: calc(100% + 3px);
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  /* center the content  */
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.item .title_text {
+  color: white;
+  font-family: Sans-Serif;
+  font-size: 200%; }
+
+.item:hover .title_container {
+  /* show the div */
+  visibility: visible; }
+
+.link {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  display: block; }
 
 .boxes {
   display: flex;
